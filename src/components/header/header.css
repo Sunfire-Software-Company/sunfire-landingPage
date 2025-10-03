@@ -1,0 +1,143 @@
+.header {
+  background: #333333;
+  padding: 0.6rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #444;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.logo-image {
+  width: 100px;
+  height: 50px;
+  border-radius: 10%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+.brand-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00d4ff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.header-cta {
+  display: flex;
+  align-items: center;
+}
+
+.cta-button {
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
+}
+
+.cta-button:hover {
+  background: #ffffff;
+  color: #333333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+  
+  .nav-menu {
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem;
+  }
+  
+  .brand-name {
+    font-size: 1.3rem;
+  }
+  
+  .cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-menu {
+    display: none; /* Aquí podrías implementar un menú hamburguesa */
+  }
+}

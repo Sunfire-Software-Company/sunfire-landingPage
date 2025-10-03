@@ -1,0 +1,44 @@
+.footer {
+  background: #333333;
+  color: #ffffff;
+  padding: 2rem 0 1rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-brand h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+}
+
+.footer-contact p {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}

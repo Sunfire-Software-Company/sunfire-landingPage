@@ -1,0 +1,65 @@
+---
+// Footer component
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>SUNFIRE</h3>
+        <p>Desarrollo de software a medida</p>
+      </div>
+      
+      <div class="footer-contact">
+        <p>&copy; 2025 Sunfire. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #ffffff;
+    padding: 2rem 0 1rem;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-brand h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-brand p {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+  }
+
+  .footer-contact p {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,16 +1,18 @@
 ---
-
+import MainLayout from '../layouts/Main/mainLayout.astro';
+import Card from '../components/card/card.astro';
+import ServicesGrid from '../components/services/servicesGrid.astro';
+import '../styles/styles.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro por componentes</h1>
-	</body>
-</html>
+<MainLayout title="Sunfire - Desarrollo de Software">
+	<section class="hero-section">
+    <div class="hero-container">
+		<h1>Magically add a senior developer to your team</h1>
+		<p>Get top-tier design in less than a week. Subscriptions as one-time projects.</p>
+		<a href="#servicios" class="hero-cta">Get Started</a>
+    </div>
+	</section>
+	<Card />
+	<ServicesGrid />
+</MainLayout>
