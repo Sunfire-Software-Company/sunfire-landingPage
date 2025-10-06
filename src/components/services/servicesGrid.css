@@ -1,6 +1,8 @@
 .services-section {
   padding: 5rem 0;
   background: #2a2a2a;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .services-container {

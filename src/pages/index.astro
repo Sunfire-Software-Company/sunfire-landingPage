@@ -2,17 +2,29 @@
 import MainLayout from '../layouts/Main/mainLayout.astro';
 import Card from '../components/card/card.astro';
 import ServicesGrid from '../components/services/servicesGrid.astro';
+import Hero from '../components/hero/hero.astro';
+import Contacto from '../components/contacto/contacto.astro';
+import Footer from '../components/footer/footer.astro';
 import '../styles/styles.css';
+
 ---
 
 <MainLayout title="Sunfire - Desarrollo de Software">
-	<section class="hero-section">
-    <div class="hero-container">
-		<h1>Magically add a senior developer to your team</h1>
-		<p>Get top-tier design in less than a week. Subscriptions as one-time projects.</p>
-		<a href="#servicios" class="hero-cta">Get Started</a>
-    </div>
+	<section class="hero-section scroll-snap-section">
+		<Hero/>
 	</section>
-	<Card />
-	<ServicesGrid />
+	
+	<section class="card-section scroll-snap-section">
+		<Card/>
+	</section>
+	
+	<section class="services-section scroll-snap-section">
+		<ServicesGrid/>
+	</section>
+	
+	<section class="contact-section scroll-snap-section">
+		<Contacto/>
+	</section>
 </MainLayout>
+
+

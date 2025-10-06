@@ -4,6 +4,9 @@
   color: #fff;
   overflow: hidden;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .projects-container {
@@ -22,6 +25,40 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Tira horizontal al inicio */
+.projects-title::before {
+  content: '';
+  width: 150px;
+  height: 12px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(102, 126, 234, 0.4) 30%, 
+    rgba(102, 126, 234, 0.8) 100%
+  );
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Tira horizontal al final */
+.projects-title::after {
+  content: '';
+  width: 150px;
+  height: 12px;
+  background: linear-gradient(90deg, 
+    rgba(118, 75, 162, 0.8) 0%, 
+    rgba(118, 75, 162, 0.4) 70%, 
+    transparent 100%
+  );
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(118, 75, 162, 0.4);
 }
 
 .projects-track {
@@ -32,8 +69,8 @@
 }
 
 .project-card {
-  width: 280px;
-  height: 230px;
+  width: 310px;
+  height: 250px;
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s ease;
@@ -143,6 +180,14 @@
   
   .projects-title {
     font-size: 2.2rem;
+    gap: 1.5rem;
+  }
+  
+  /* Ajustar tiras horizontales en móviles */
+  .projects-title::before,
+  .projects-title::after {
+    width: 100px;
+    height: 10px;
   }
   
   @keyframes slideInfinite {
@@ -152,5 +197,18 @@
     100% {
       transform: translateX(calc(-250px * 4 - 2rem * 4));
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .projects-title::before,
+  .projects-title::after {
+    width: 120px;
+    height: 8px;
   }
 }

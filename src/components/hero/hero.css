@@ -1,0 +1,455 @@
+/* Hero Section - Pantalla completa */
+.hero-section {
+  height: 110vh; /* Cambiar a 100vh para scroll snap */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 2rem 2rem 2rem 2rem;
+  overflow: hidden; /* Para ocultar la parte que no queremos mostrar */
+}
+
+/* Contenedor de imagen de fondo */
+.image.container {
+  position: absolute;
+  bottom: -47.5%; /* Posicionar para que solo se vea la mitad superior */
+  width: 109%; /* Ancho de la imagen */
+  height: 115%; /* Alto de la imagen */
+  left: -4%;
+  z-index: 1; /* Detrás del contenido */
+  opacity: 0.5; /* Opacidad muy baja para mejor legibilidad del texto */
+  pointer-events: none; /* No interfiere con la interacción */
+}
+
+.hero-image {
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-container {
+  max-width: 800px;
+  color: #fff;
+  position: relative;
+  z-index: 2; /* Por encima de la imagen de fondo */
+}
+
+.hero-container h1 {
+  font-size: 3.5rem;
+  font-weight: 800; /* Más peso para mayor legibilidad */
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.hero-container p {
+  font-size: 1.2rem;
+  color: #f0f0f0; /* Color más claro y legible */
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  font-weight: 600; /* Peso normal para mejor legibilidad */
+}
+
+/* Botón Get Started */
+.get-started-container {
+  margin-top: 9rem;
+  text-align: center;
+  z-index: 2;
+}
+
+.get-started-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: Monaco, Menlo, 'Cascadia Code', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace;
+  z-index: 2;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.get-started-btn:active {
+  transform: translateY(0);
+}
+
+/* FORMULARIO DE EMAIL DEL HERO - Clases específicas para evitar conflictos */
+.hero-contact-form-container {
+  margin-top: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-contact-form {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-form-group {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 50px;
+}
+
+.hero-email-input {
+  flex: 1;
+  padding: 0 1.5rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.hero-email-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-email-input:focus {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-submit-btn {
+  padding: 0 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 100%;
+  min-width: 140px;
+  border-radius: 5px;
+}
+
+.hero-submit-btn:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: scale(1.02);
+}
+
+.hero-form-disclaimer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hero-form-disclaimer p {
+  font-size: 0.85rem;
+  color: #d0d0d0; /* Color más claro para mejor legibilidad */
+  margin: 0;
+  font-weight: 400; /* Peso ligero pero legible */
+}
+
+.hero-form-disclaimer a {
+  color: #a0a8ff; /* Color más claro para el enlace */
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+  font-weight: 400; /* Peso normal para mejor legibilidad */
+}
+
+.hero-form-disclaimer a:hover {
+  border-bottom-color: #667eea;
+}
+
+.hero-cta {
+  margin-top: 10rem;
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-cta:hover {
+  background: #667eea;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Responsive Hero para móviles */
+@media (max-width: 768px) {
+  .hero-section {
+    background: 
+      linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)),
+      url('../public/HEROSunFire.png') center 65% / contain no-repeat;
+    /* Usar 'contain' para mostrar toda la imagen con los iconos */
+    padding: 0 0.8rem;
+  }
+  
+  .hero-container {
+    min-height: calc(100vh - 60px); /* Menos altura de header */
+    padding-top: 60px; /* Menos padding top */
+  }
+  
+  .hero-container h1 {
+    font-size: 3rem; /* Título más pequeño */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .hero-container p {
+    font-size: 1rem; /* Texto más pequeño */
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+  
+  .hero-contact-form-container {
+    max-width: 65%;
+    margin-top: 1.5rem;
+  }
+  
+  .hero-form-group {
+    height: 50px;
+    padding: 3px;
+  }
+
+  .hero-submit-btn {
+    padding: 0 3rem; /* Botón más pequeño */
+    font-size: 0.6rem; /* Texto más pequeño */
+    min-width: 100px; /* Botón más pequeño */
+  }
+  
+  .get-started-container {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+  height: 110vh; /* Cambiar a 100vh para scroll snap */
+  background: transparent; /* Transparente para que se vea el degradado del body */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 2rem 2rem 2rem 2rem;
+}
+  
+.hero-container {
+  max-width: 95vw;
+  padding: 0 0.3rem;
+}
+
+  
+.hero-container h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+  
+.hero-container p {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  line-height: 1.3;
+  text-align: center;
+  justify-content: center;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image.container {
+  position: absolute;
+  bottom: -45%; /* Posicionar para que solo se vea la mitad superior */
+  width: 150%; /* Ancho de la imagen */
+  height: 120%; /* Alto de la imagen */
+  left: -4%;
+  z-index: 1; /* Detrás del contenido */
+  opacity: 0.5; /* Opacidad muy baja para mejor legibilidad del texto */
+  pointer-events: none; /* No interfiere con la interacción */
+}
+
+.hero-image {
+  width: 130%;
+  height: auto;
+  object-fit: contain;
+}
+  
+.get-started-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: Monaco, Menlo, 'Cascadia Code', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.get-started-btn:active {
+  transform: translateY(0);
+}
+
+/* FORMULARIO DE EMAIL DEL HERO - Clases específicas para evitar conflictos */
+.hero-contact-form-container {
+  margin-top: 3.5rem;
+  margin-bottom: 10rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-contact-form {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 0.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-form-group {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 43px;
+}
+
+.hero-email-input {
+  flex: 1;
+  padding: 0 0.4rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 0.8rem;
+  outline: none;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.hero-email-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-email-input:focus {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-submit-btn {
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  font-size: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 95%;
+  min-width: 100px;
+  border-radius: 20px;
+}
+
+.hero-submit-btn:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: scale(1.02);
+}
+
+.hero-form-disclaimer {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.hero-form-disclaimer p {
+  font-size: 0.6rem;
+  margin: 2rem 1;
+  color: #ffffff;
+  text-align: center;
+}
+
+.hero-form-disclaimer a {
+  color: #667eea;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+  text-align: center;
+  font-weight: 600;
+}
+
+.hero-form-disclaimer a:hover {
+  border-bottom-color: #667eea;
+}
+
+.hero-cta {
+  margin-top: 10rem;
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-cta:hover {
+  background: #667eea;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+}
