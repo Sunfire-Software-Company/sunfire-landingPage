@@ -349,7 +349,7 @@ position: static;
 @media (max-width: 480px) {
   /* Sección principal con mejor espaciado */
   .blog-section {
-    padding: 3rem 0 12.5rem 0;
+    padding: 10rem 0 12.5rem 0;
   }
   
   .blog-container {
