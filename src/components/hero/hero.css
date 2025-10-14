@@ -1,25 +1,30 @@
 /* Hero Section - Pantalla completa */
 .hero-section {
-  height: 110vh; /* Cambiar a 100vh para scroll snap */
+  width: 100%;
+  height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
   position: relative;
-  padding: 2rem 2rem 2rem 2rem;
-  overflow: hidden; /* Para ocultar la parte que no queremos mostrar */
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  overflow: hidden;
 }
 
 /* Contenedor de imagen de fondo */
 .image.container {
   position: absolute;
-  bottom: -47.5%; /* Posicionar para que solo se vea la mitad superior */
-  width: 109%; /* Ancho de la imagen */
-  height: 115%; /* Alto de la imagen */
-  left: -4%;
-  z-index: 1; /* Detrás del contenido */
-  opacity: 0.5; /* Opacidad muy baja para mejor legibilidad del texto */
-  pointer-events: none; /* No interfiere con la interacción */
+  bottom: -47.5%;
+  width: 109%; 
+  height: 117%; 
+  left: 1%;
+  z-index: 1; 
+  opacity: 0.5; 
+  pointer-events: none; 
+  
+  /* Animación de entrada desde abajo */
+  transform: translateY(100px);
+  animation: slideUpImage 1.5s ease-out forwards;
 }
 
 .hero-image {
@@ -33,11 +38,15 @@
   color: #fff;
   position: relative;
   z-index: 2; /* Por encima de la imagen de fondo */
+  text-align: center; 
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.2s ease-out forwards 0.3s;
 }
 
 .hero-container h1 {
   font-size: 3.5rem;
-  font-weight: 800; /* Más peso para mayor legibilidad */
+  font-weight: 800; 
   line-height: 1.2;
   margin-bottom: 1rem;
   margin-top: 2rem;
@@ -45,18 +54,73 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  
+  /* Typing animation mejorada */
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 7s steps(30, end) infinite alternate;
 }
 
+.hero-container h1::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #667eea;
+  animation: blink-caret 0.9s step-start infinite;
+}
+
+/* Keyframes para la animación de typing */
+@keyframes typing {
+  0% { width: 0 }
+  25% { width: 100% }
+  50% { width: 100% }
+  100% { width: 0 }
+}
+
+/* Keyframes para el cursor parpadeante */
+@keyframes blink-caret {
+  0%, 25% { opacity: 1 }
+  26%, 50% { opacity: 0 }
+  51%, 100% { opacity: 0 }
+}
+
+/* Keyframes para la animación de la imagen de fondo subiendo */
+@keyframes slideUpImage {
+  from {
+    transform: translateY(100px);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+}
+
+/* Keyframes para la animación del contenedor del hero */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .hero-container p {
   font-size: 1.2rem;
-  color: #f0f0f0; /* Color más claro y legible */
+  color: #f0f0f0; 
   margin-bottom: 2.5rem;
   line-height: 1.6;
-  font-weight: 600; /* Peso normal para mejor legibilidad */
+  font-weight: 600; 
 }
 
-/* Botón Get Started */
 .get-started-container {
   margin-top: 9rem;
   text-align: center;
@@ -223,6 +287,24 @@
     font-size: 3rem; /* Título más pequeño */
     margin-bottom: 1rem;
     line-height: 1.2;
+    
+    /* Typing animation para tablet */
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 6s steps(35, end) infinite alternate;
+  }
+  
+  .hero-container h1::after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #667eea;
+    animation: blink-caret 0.9s step-start infinite;
   }
   
   .hero-container p {
@@ -254,19 +336,24 @@
 
 @media (max-width: 480px) {
   .hero-section {
-  height: 110vh; /* Cambiar a 100vh para scroll snap */
+  height: 110vh;
   background: transparent; /* Transparente para que se vea el degradado del body */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 2rem 0.5rem 2rem 0.5rem;
 }
   
 .hero-container {
-  max-width: 95vw;
-  padding: 0 0.3rem;
+  max-width: 200vw;
+  padding: 0 0.1rem;
+  
+  /* Animación de entrada del contenedor para móvil */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s ease-out forwards 0.3s;
 }
 
   
@@ -275,17 +362,34 @@
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1rem;
-  margin-top: 2rem;
+  margin-top: 5rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  
+  /* Typing animation para móvil */
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 6s steps(25, end) infinite alternate;
+}
+
+.hero-container h1::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  width: 2px;
+  background-color: #667eea;
+  animation: blink-caret 0.9s step-start infinite;
 }
   
 .hero-container p {
   font-size: 0.8rem;
   font-weight: 400;
-  margin-bottom: 2.5rem;
+  margin-bottom: -2rem;
   line-height: 1.3;
   text-align: center;
   justify-content: center;
@@ -297,12 +401,16 @@
 .image.container {
   position: absolute;
   bottom: -45%; /* Posicionar para que solo se vea la mitad superior */
-  width: 150%; /* Ancho de la imagen */
-  height: 120%; /* Alto de la imagen */
+  width: 160%; /* Ancho de la imagen */
+  height: 122%; /* Alto de la imagen */
   left: -4%;
   z-index: 1; /* Detrás del contenido */
   opacity: 0.5; /* Opacidad muy baja para mejor legibilidad del texto */
   pointer-events: none; /* No interfiere con la interacción */
+  
+  /* Animación de entrada desde abajo para móvil */
+  transform: translateY(80px);
+  animation: slideUpImage 1.5s ease-out forwards;
 }
 
 .hero-image {
@@ -315,7 +423,7 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 3rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 50px;
@@ -340,11 +448,13 @@
 /* FORMULARIO DE EMAIL DEL HERO - Clases específicas para evitar conflictos */
 .hero-contact-form-container {
   margin-top: 3.5rem;
-  margin-bottom: 10rem;
+  margin-bottom: 9rem;
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
+
+
 
 .hero-contact-form {
   background: rgba(0, 0, 0, 0.6);
@@ -452,4 +562,186 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
 }
+}
+
+/* Tablet responsive (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-section {
+    background: 
+      linear-gradient(rgba(26, 26, 26, 0.4), rgba(26, 26, 26, 0.4)),
+      url('../public/HEROSunFire.png') center 60% / contain no-repeat;
+    padding: 0 1.5rem;
+    height: 90vh;
+  }
+  
+  .hero-container {
+    min-height: calc(90vh - 70px);
+    padding-top: 70px;
+    max-width: 90%;
+  }
+  
+  .hero-container h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+    animation: typing 6s steps(30, end) infinite alternate;
+  }
+  
+  .hero-container p {
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-contact-form-container {
+    max-width: 450px;
+    margin-top: 2rem;
+  }
+  
+  .hero-form-group {
+    height: 55px;
+    padding: 4px;
+  }
+
+  .hero-email-input {
+    padding: 0 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-submit-btn {
+    padding: 0.6rem 2rem;
+    font-size: 0.7rem;
+    min-width: 120px;
+  }
+  
+  .get-started-btn {
+    padding: 0.7rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Resolución 2304x1440 (High DPI) */
+@media (min-width: 2304px) and (min-height: 1440px) {
+  .hero-section {
+    background: 
+      linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)),
+      url('../public/HEROSunFire.png') center 50% / cover no-repeat;
+    padding: 0 3rem;
+    height: 100vh;
+  }
+  
+  .hero-container {
+    min-height: calc(100vh - 100px);
+    padding-top: 100px;
+    max-width: 1400px;
+  }
+  
+  .hero-container h1 {
+    font-size: 5.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    animation: typing 8s steps(40, end) infinite alternate;
+  }
+  
+  .hero-container h1::after {
+    width: 4px;
+    background-color: #667eea;
+  }
+  
+  .hero-container p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-contact-form-container {
+    max-width: 600px;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+  }
+  
+  .hero-contact-form {
+    padding: 0.5rem;
+    border-radius: 60px;
+  }
+  
+  .hero-form-group {
+    height: 70px;
+    padding: 6px;
+    border-radius: 60px;
+  }
+
+  .hero-email-input {
+    padding: 0 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .hero-submit-btn {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    min-width: 150px;
+    border-radius: 30px;
+  }
+  
+  .hero-form-disclaimer p {
+    font-size: 0.9rem;
+    margin: 1.5rem 0;
+  }
+  
+  .get-started-btn {
+    padding: 1.2rem 3.5rem;
+    font-size: 1.3rem;
+    margin-top: 3rem;
+  }
+  
+  .image.container {
+    width: 120%;
+    height: 100%;
+    bottom: -30%;
+    left: -10%;
+    opacity: 0.4;
+  }
+  
+  .hero-image {
+    width: 100%;
+  }
+  
+  /* Animaciones mejoradas para alta resolución */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUpImage {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0.4;
+    }
+  }
 }

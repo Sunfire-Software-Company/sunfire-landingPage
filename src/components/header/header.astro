@@ -3,7 +3,7 @@
 import './header.css';
 ---
 
-<header class="header">
+<header class="header"> 
   <nav class="nav-container">
     <!-- Logo / Brand -->
     <div class="logo">
@@ -11,22 +11,61 @@ import './header.css';
       <span class="brand-name"></span>
     </div>
 
+    <!-- Hamburger Button (Mobile) -->
+    <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
     <!-- Navigation Menu -->
-    <ul class="nav-menu">
+    <ul class="nav-menu" id="nav-menu">
       <li class="nav-item">
         <a href="#hero" class="nav-link">INICIO</a>
       </li>
       <li class="nav-item">
-        <a href="#services" class="nav-link">SERVICIOS</a>
+        <a href="#blog" class="nav-link">NOSOTROS</a>
       </li>
       <li class="nav-item">
-        <a href="#nosotros" class="nav-link">NOSOTROS</a>
+        <a href="#servicesGrid" class="nav-link">SERVICIOS</a>
+      </li>
+      <!-- CTA Button inside mobile menu -->
+      <li class="nav-item mobile-cta">
+        <a href="#contacto" class="nav-link cta-mobile">CONTACTAR</a>
       </li>
     </ul>
 
-    <!-- CTA Button -->
-    <div class="header-cta">
+    <!-- CTA Button (Desktop) -->
+    <div class="header-cta desktop-cta">
       <a href="#contacto" class="cta-button">CONTACTAR</a>
     </div>
   </nav>
 </header>
+
+<script>
+  // Toggle mobile menu
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
+  
+  hamburgerBtn?.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('active');
+    navMenu?.classList.toggle('active');
+  });
+  
+  // Close menu when clicking on a link
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerBtn?.classList.remove('active');
+      navMenu?.classList.remove('active');
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburgerBtn?.contains(e.target as Node) && !navMenu?.contains(e.target as Node)) {
+      hamburgerBtn?.classList.remove('active');
+      navMenu?.classList.remove('active');
+    }
+  });
+</script>

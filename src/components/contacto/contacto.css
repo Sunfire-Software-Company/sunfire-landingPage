@@ -1,20 +1,9 @@
 .contact-section {
+    background: #1a1a1a;
   padding: 70px 20px;
   min-height: 100vh;
-  position: relative;
   overflow: hidden;
-}
-
-.contact-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/public/Images/contacto.png') center/cover;
-  opacity: 0.5;
-  z-index: 0;
+  scroll-behavior: smooth; 
 }
 
 .contact-container {
@@ -26,6 +15,22 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
+}
+
+.image-container {
+  position: absolute;
+  top: 46%;
+  left: -28%;
+  height: 80%;
+  transform: translateY(-50%);
+  opacity: 0.12;
+  z-index: 1;
+  pointer-events: none; 
+}
+
+.contact-image {
+  height: 122%;
+  object-fit: contain;
 }
 
 .contact-content {

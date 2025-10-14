@@ -4,7 +4,8 @@ import Card from '../components/card/card.astro';
 import ServicesGrid from '../components/services/servicesGrid.astro';
 import Hero from '../components/hero/hero.astro';
 import Contacto from '../components/contacto/contacto.astro';
-import Footer from '../components/footer/footer.astro';
+import Blog from '../components/blog/blog.astro';
+
 import '../styles/styles.css';
 
 ---
@@ -13,7 +14,11 @@ import '../styles/styles.css';
 	<section class="hero-section scroll-snap-section">
 		<Hero/>
 	</section>
-	
+
+	<section class="blog-section">
+		<Blog/>
+	</section>
+
 	<section class="card-section scroll-snap-section">
 		<Card/>
 	</section>
@@ -22,7 +27,11 @@ import '../styles/styles.css';
 		<ServicesGrid/>
 	</section>
 	
-	<section class="contact-section scroll-snap-section">
+
+
+	<!-- <section class="preguntas-section">
+		<Preguntas/>
+	</section> -->	<section class="contact-section scroll-snap-section">
 		<Contacto/>
 	</section>
 </MainLayout>

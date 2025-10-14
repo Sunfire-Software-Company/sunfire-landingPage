@@ -1,0 +1,485 @@
+
+.blog-section {
+  padding: 0rem 0;
+  background: linear-gradient(135deg, #202020 0%, #2c2c2c 50%, #3a3a3a 2030%);
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: -10rem;
+    border: none;
+  box-shadow: none;
+}
+
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24rem 4rem;
+  position: relative;
+  z-index: 2; 
+    color: #fff;
+}
+
+.image-blog-container {
+  position: absolute;
+  bottom: 14.5%; 
+  width: 109%;
+  height: 114.5%; 
+  left: 1%;
+  z-index: 1; 
+  opacity: 0.2; 
+  pointer-events: none; 
+  transform: translateY(100px);
+  animation: slideUpImage 1.5s ease-out forwards;
+}
+
+.blog-image {
+    position: absolute;
+  width: 90%;
+  height: 42.3%;
+  object-fit: contain;
+position: static;    
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* ===== SECCIÓN INTRO - HORIZONTAL COMPLETA ===== */
+.blog-intro {
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 6rem;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, rgba(137, 102, 234, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.blog-intro h2 {
+    text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #d0d0d0;
+  text-align: center;
+}
+
+.intro-content p:last-child {
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #fff;
+    text-align: center;
+}
+
+.highlight-text {
+  background: linear-gradient(135deg, rgba(137, 102, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
+  border-radius: 15px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  position: relative !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.highlight-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border-radius: 15px;
+  z-index: -1;
+}
+
+/* ===== GRID DE DOS COLUMNAS ===== */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.grid-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.column-content h3 {
+    text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.column-text {
+  flex: 1;
+}
+
+.column-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: #c0c0c0;
+  text-align: justify;
+}
+
+.column-text p:last-child {
+  margin-bottom: 0;
+    text-align: justify;
+}
+
+/* Lista de beneficios */
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.benefits-list li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  color: #c0c0c0;
+  padding-left: 0.5rem;
+}
+
+/* Imágenes de las columnas */
+.column-image {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.column-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.column-image:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== CALL TO ACTION FINAL ===== */
+.blog-cta {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-cta h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.cta-transform-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-transform-btn:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.cta-transform-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .blog-container {
+    padding: 0 1.5rem;
+  }
+  
+  .blog-intro h2 {
+    font-size: 2.5rem;
+  }
+  
+  .intro-content p {
+    font-size: 1rem;
+  }
+  
+  .column-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  /* OCULTAR IMAGEN DE FONDO EN TABLET */
+  .image-blog-container {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 12rem 2rem;
+  }
+  
+  .blog-container {
+    padding: 0 1rem;
+    margin-top: -10rem;
+  }
+  
+  /* OCULTAR IMAGEN DE FONDO EN MÓVIL */
+  .image-blog-container {
+    display: none;
+  }
+  
+  /* Intro section mobile */
+  .blog-intro {
+    margin-bottom: 3rem;
+    padding: 2rem 1rem;
+  }
+  
+  .blog-intro h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .intro-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  /* Grid becomes single column on mobile */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .grid-column {
+    gap: 1.5rem;
+  }
+  
+  .column-content h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .column-text p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  
+  .benefits-list {
+    text-align: center;
+    padding-left: 0;
+  }
+  
+  .benefits-list li {
+    font-size: 0.95rem;
+    text-align: center;
+    padding-left: 0;
+  }
+  
+  .column-image {
+    height: 250px;
+  }
+  
+  /* CTA mobile */
+  .blog-cta {
+    padding: 2rem 1rem;
+  }
+  
+  .blog-cta h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-transform-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 280px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* Mobile pequeño */
+@media (max-width: 480px) {
+  /* Sección principal con mejor espaciado */
+  .blog-section {
+    padding: 3rem 0 12.5rem 0;
+  }
+  
+  .blog-container {
+    padding: 0 0.8rem;
+    max-width: 100%;
+  }
+  
+  /* Intro section optimizada */
+  .blog-intro {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 0.8rem;
+    border-radius: 15px;
+  }
+  
+  .blog-intro h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+  
+  .intro-content {
+    max-width: 100%;
+  }
+  
+  .intro-content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 0 0.2rem;
+  }
+  
+  .intro-content p:last-child {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  
+  /* Grid optimizado para móvil pequeño */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .grid-column {
+    gap: 1.2rem;
+  }
+  
+  /* Títulos de columnas mejorados */
+  .column-content h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    padding: 0 0.2rem;
+  }
+  
+  /* Texto de columnas más legible */
+  .column-text {
+    flex: 1;
+  }
+  
+  .column-text p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    padding: 0 0.2rem;
+    color: #d5d5d5;
+  }
+  
+  .column-text p:last-child {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  
+  /* Lista de beneficios optimizada */
+  .benefits-list {
+    margin: 1rem 0;
+    padding-left: 0;
+    text-align: center;
+  }
+  
+  .benefits-list li {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+    padding-left: 0;
+    color: #d5d5d5;
+    text-align: center;
+  }
+  
+  /* Imágenes más pequeñas pero proporcionadas */
+  .column-image {
+    height: 180px;
+    border-radius: 12px;
+    margin: 0.5rem 0;
+  }
+  
+  /* CTA optimizado */
+  .blog-cta {
+    padding: 1.5rem 0.8rem;
+    border-radius: 15px;
+  }
+  
+  .blog-cta h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+  
+  .cta-transform-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    letter-spacing: 0.2px;
+    text-transform: none;
+    white-space: normal;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 250px;
+    margin: 0 auto;
+    display: block;
+    line-height: 1.3;
+    text-align: center;
+  }
+  
+  /* IMAGEN TAMBIÉN OCULTA EN MÓVIL PEQUEÑO */
+  .image-blog-container {
+    display: none;
+  }
+}
