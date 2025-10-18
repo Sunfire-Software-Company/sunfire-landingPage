@@ -43,9 +43,9 @@ Teléfono: ${phone || 'No proporcionado'}
 Mensaje: ${message}`;
       
       // Número de WhatsApp (reemplaza con tu número real)
-      const whatsappNumber = '9933992138'; // Cambia por tu número
-      const whatsappUrl = `https://wa.me/${9933992138}?text=${encodeURIComponent(whatsappMessage)}`;
-      
+      const whatsappNumber = '9932911393'; 
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
       // También puedes enviar por email
       const mailtoUrl = `mailto:hello@sunfire.com?subject=Contacto desde la web - ${firstName} ${lastName}&body=${encodeURIComponent(whatsappMessage)}`;
       
