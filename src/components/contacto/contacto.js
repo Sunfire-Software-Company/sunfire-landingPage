@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       // Crear mensaje para WhatsApp
-const whatsappMessage = `“Hola!, mi nombre es ${firstName || 'No proporcionado'} ${lastName || 'No proporcionado'}. Estoy interesado en algunas de las soluciones SunFire Software Company.
+const whatsappMessage = `Hola!, mi nombre es ${firstName || 'No proporcionado'} ${lastName || 'No proporcionado'}. Estoy interesado en algunas de las soluciones SunFire Software Company.
 
 Aquí te comparto mi información:
 Email: ${email || 'No proporcionado'}
