@@ -7,12 +7,23 @@ import Contacto from '../components/contacto/contacto.astro';
 import Blog from '../components/blog/blog.astro';
 
 import '../styles/styles.css';
+import Policy from '../components/blog/policy.astro';
 
 ---
 
+
+
 <MainLayout title="Sunfire - Desarrollo de Software">
+	
+    <div class="image container">
+            <img src="/Images/CodeHERO.png" alt="Hero Image" class="hero-image" />
+        </div>
 	<section class="hero-section scroll-snap-section">
 		<Hero/>
+	</section>
+
+	<section class="services-section scroll-snap-section">
+		<ServicesGrid/>
 	</section>
 
 	<section class="blog-section">
@@ -22,16 +33,8 @@ import '../styles/styles.css';
 	<section class="card-section scroll-snap-section">
 		<Card/>
 	</section>
-	
-	<section class="services-section scroll-snap-section">
-		<ServicesGrid/>
-	</section>
-	
 
-
-	<!-- <section class="preguntas-section">
-		<Preguntas/>
-	</section> -->	<section class="contact-section scroll-snap-section">
+	<section class="contact-section scroll-snap-section">
 		<Contacto/>
 	</section>
 </MainLayout>

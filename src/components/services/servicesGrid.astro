@@ -5,9 +5,9 @@ import './servicesGrid.css';
 
 <section class="services-section" id="servicesGrid">
   <div class="services-container">
-    <h2>Nuestros Servicios</h2>
+    <h2>- Nuestros Servicios -</h2>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card" onclick="toggleDetailCard(1)" data-service="1">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 2L2 7v10c0 5.55 3.84 10 9 9 5.16 1 9-3.45 9-9V7l-10-5z"/>
@@ -18,7 +18,7 @@ import './servicesGrid.css';
         <p>Software pensado para tu negocio. Desarrollamos aplicaciones completamente personalizadas.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" onclick="toggleDetailCard(2)" data-service="2">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -26,11 +26,11 @@ import './servicesGrid.css';
             <line x1="12" y1="17" x2="12" y2="21"/>
           </svg>
         </div>
-        <h3>Web Apps & PWA</h3>
+        <h3>Aplicaciones de Escritorio Web</h3>
         <p>Aplicaciones web rápidas, seguras y disponibles en cualquier dispositivo.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" onclick="toggleDetailCard(3)" data-service="3">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="9" cy="21" r="1"/>
@@ -38,22 +38,22 @@ import './servicesGrid.css';
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
           </svg>
         </div>
-        <h3>E-commerce con Stripe</h3>
+        <h3>Tiendas Online con Pagos Integrados</h3>
         <p>Tiendas online seguras y listas para vender con pagos integrados.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" onclick="toggleDetailCard(4)" data-service="4">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
             <polyline points="14,2 14,8 20,8"/>
           </svg>
         </div>
-        <h3>Landing Pages</h3>
+        <h3>Páginas Web</h3>
         <p>Sitios ligeros y enfocados en conversión para maximizar tus resultados.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" onclick="toggleDetailCard(5)" data-service="5">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
@@ -62,11 +62,11 @@ import './servicesGrid.css';
             <line x1="6" y1="18" x2="6" y2="18.01"/>
           </svg>
         </div>
-        <h3>Backend & APIs</h3>
+        <h3>Infraestructura para Apps</h3>
         <p>Sistemas backend sólidos y escalables para tu aplicación.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" onclick="toggleDetailCard(6)" data-service="6">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <ellipse cx="12" cy="5" rx="9" ry="3"/>
@@ -79,4 +79,186 @@ import './servicesGrid.css';
       </div>
     </div>
   </div>
+
+  <!-- Cards detallados desplegables -->
+  <div id="detail-card-overlay" class="detail-card-overlay" onclick="closeDetailCard()">
+    <div class="detail-card" onclick="event.stopPropagation()">
+      <div class="detail-card-header">
+        <button class="close-btn" onclick="closeDetailCard()">&times;</button>
+      </div>
+      <div class="detail-card-content">
+        <h3 class="detail-card-title"></h3>
+        <p class="detail-card-description"></p>
+        <div class="detail-card-features">
+          <h4>Características:</h4>
+          <ul class="features-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+// Datos detallados de cada servicio
+const serviceDetails = {
+  1: {
+    title: "Apps a la Medida",
+    description: "Software personalizado diseñado específicamente para las necesidades únicas de tu empresa, optimizando procesos y mejorando la eficiencia operativa.",
+    features: [
+      "Desarrollo multiplataforma", 
+      "Integración con sistemas existentes", 
+      "Interfaz intuitiva y personalizable",
+      "Escalabilidad garantizada",
+      "Soporte técnico especializado"
+    ],
+    backgroundImage: "/Images/appMed.png"
+  },
+  2: {
+    title: "Aplicaciones Web",
+    description: "Aplicaciones web modernas y responsive que funcionan perfectamente en cualquier dispositivo, ofreciendo una experiencia de usuario excepcional.",
+    features: [
+      "Diseño responsive",
+      "Tecnologías modernas (React, Vue, Angular)",
+      "Optimización SEO integrada",
+      "Carga rápida y eficiente",
+      "Compatible con todos los navegadores"
+    ],
+    backgroundImage: "/Images/pwa.png"
+  },
+  3: {
+    title: "E-Commerce Completo",
+    description: "Tiendas online profesionales con sistemas de pago seguros, gestión de inventario y herramientas de marketing digital integradas.",
+    features: [
+      "Pagos seguros (PayPal, Stripe, etc.)",
+      "Gestión de inventario automática",
+      "Panel de administración completo",
+      "Marketing y analytics integrados",
+      "Certificados SSL incluidos"
+    ],
+    backgroundImage: "/Images/eCommerce.png"
+  },
+  4: {
+    title: "Páginas Web Corporativas",
+    description: "Sitios web optimizados para conversión que representan profesionalmente tu marca y generan resultados medibles para tu negocio.",
+    features: [
+      "Diseño profesional y moderno",
+      "Optimización para buscadores (SEO)",
+      "Formularios de contacto avanzados",
+      "Integración con redes sociales",
+      "Analytics y métricas detalladas"
+    ],
+    backgroundImage: "/Images/landingCard.png"
+  },
+  5: {
+    title: "Infraestructura Backend",
+    description: "Sistemas backend robustos y escalables que soportan el crecimiento de tu aplicación con la mejor arquitectura y seguridad del mercado.",
+    features: [
+      "APIs REST y GraphQL",
+      "Arquitectura microservicios",
+      "Seguridad de nivel empresarial",
+      "Escalabilidad automática",
+      "Monitoreo y logs avanzados"
+    ],
+    backgroundImage: "/Images/backend.png"
+  },
+  6: {
+    title: "Gestión de Bases de Datos",
+    description: "Diseño e implementación de bases de datos optimizadas, tanto relacionales como NoSQL, para garantizar el mejor rendimiento de tu aplicación.",
+    features: [
+      "MySQL, PostgreSQL, MongoDB",
+      "Optimización de consultas",
+      "Backup automático diario",
+      "Migraciones seguras",
+      "Escalabilidad horizontal"
+    ],
+    backgroundImage: "/Images/database.png"
+  }
+};
+
+// Función para abrir el card detallado
+function toggleDetailCard(serviceId: number) {
+  const overlay = document.getElementById('detail-card-overlay');
+  if (!overlay) return;
+  
+  const card = overlay.querySelector('.detail-card');
+  if (!card) return;
+  
+  const service = serviceDetails[serviceId as keyof typeof serviceDetails];
+  if (!service) return;
+  
+  // Actualizar contenido del card
+  const titleElement = card.querySelector('.detail-card-title');
+  const descriptionElement = card.querySelector('.detail-card-description');
+  const featuresList = card.querySelector('.features-list');
+  const headerElement = card.querySelector('.detail-card-header') as HTMLElement;
+  
+  if (titleElement) titleElement.textContent = service.title;
+  if (descriptionElement) descriptionElement.textContent = service.description;
+  
+  // Aplicar imagen de fondo específica del servicio
+  if (headerElement && service.backgroundImage) {
+    headerElement.style.setProperty('--header-bg-image', `url('${service.backgroundImage}')`);
+    
+    // Agregar clase específica para el card 6 (Base de Datos)
+    if (serviceId === 6) {
+      headerElement.classList.add('database-card');
+    } else {
+      headerElement.classList.remove('database-card');
+    }
+
+    if (serviceId === 2) {
+      headerElement.classList.add('pwa-card');
+    } else {
+      headerElement.classList.remove('pwa-card');
+    }
+  }
+  
+  if (featuresList) {
+    featuresList.innerHTML = '';
+    service.features.forEach((feature: string) => {
+      const li = document.createElement('li');
+      li.textContent = feature;
+      featuresList.appendChild(li);
+    });
+  }
+  
+  // Mostrar el card con animación
+  overlay.classList.add('active');
+  // Bloquear scroll del body
+  document.body.style.overflow = 'hidden';
+  // Usar requestAnimationFrame para una animación más suave
+  requestAnimationFrame(() => {
+    if (card) card.classList.add('active');
+  });
+}
+
+// Función para cerrar el card detallado
+function closeDetailCard() {
+  const overlay = document.getElementById('detail-card-overlay');
+  if (!overlay) return;
+  
+  const card = overlay.querySelector('.detail-card');
+  if (!card) return;
+  
+  // Iniciar animación de cierre inmediatamente
+  card.classList.remove('active');
+  // Restaurar scroll del body
+  document.body.style.overflow = 'auto';
+  
+  // Usar requestAnimationFrame para sincronizar mejor
+  requestAnimationFrame(() => {
+    overlay.classList.remove('active');
+  });
+}
+
+// Cerrar con tecla ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeDetailCard();
+  }
+});
+
+// Hacer las funciones globales
+(globalThis as any).toggleDetailCard = toggleDetailCard;
+(globalThis as any).closeDetailCard = closeDetailCard;
+</script>
 </section>

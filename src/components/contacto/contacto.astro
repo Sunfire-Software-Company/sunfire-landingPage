@@ -41,7 +41,7 @@ import './contacto.css';
         </div>
         
         <div class="form-footer">
-          <p>Al enviar este formulario, aceptas nuestros <a href="#" class="link">términos y condiciones</a> y nuestra <a href="#" class="link">política de privacidad</a>, que explica cómo podemos recopilar, usar y divulgar tu información personal, incluso a terceros.</p>
+          <p>Al enviar este formulario, aceptas nuestros <a href="/privacy-policy" class="link">términos y condiciones</a> y nuestra <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" class="link">política de privacidad</a>, que explica cómo podemos recopilar, usar y divulgar tu información personal, incluso a terceros.</p>
           <button type="submit" class="submit-btn">ENVIAR MENSAJE</button>
         </div>
       </form>
@@ -86,10 +86,30 @@ import './contacto.css';
         <div class="contact-details">
           <h3>Soporte</h3>
           <p>Visita nuestro centro de soporte para obtener ayuda con productos y servicios.</p>
-          <button class="support-btn">Centro de soporte</button>
+          <button type="button" class="support-btn" onclick="window.open('https://wa.me/9932911393?text=' + encodeURIComponent('Hola! Necesito ayuda con soporte técnico. ¿Podrían ayudarme con consultas sobre productos, servicios o soporte técnico? ¡Gracias!'), '_blank');">CENTRO DE SOPORTE</button>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+// Función para el botón de soporte
+function openWhatsAppSupport() {
+  const supportMessage = `Hola! Necesito ayuda con soporte técnico. 
+
+¿Podrían ayudarme con consultas sobre:
+- Productos y servicios
+- Soporte técnico
+- Información general
+
+¡Gracias!`;
+  
+  const whatsappNumber = '9932911393';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(supportMessage)}`;
+  
+  window.open(whatsappUrl, '_blank');
+}
+</script>
+
 <script src="./contacto.js"></script>

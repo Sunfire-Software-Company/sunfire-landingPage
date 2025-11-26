@@ -1,0 +1,23 @@
+
+
+/* Simulación de zoom 110% para resoluciones específicas de Mac */
+/* Opción 1: Transform Scale (más agresivo) */
+
+@media (min-width: 2304px) and (min-height: 1440px) {
+  body {
+    transform: scale(0.98);
+    transform-origin: top left;
+    width: 100%; /* 100% / 1.1 para compensar el scale */
+    height: 100%;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1441px) and (min-height: 900px) {
+  body {
+    transform: scale(0.98);
+    transform-origin: top left;
+    width: 100%; /* 100% / 1.1 para compensar el scale */
+    height: 100%;
+  }
+}
+

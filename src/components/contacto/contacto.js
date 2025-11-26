@@ -1,3 +1,23 @@
+// Función global para el botón de soporte (onclick)
+function openWhatsAppSupport() {
+  // Mensaje específico para soporte
+  const supportMessage = `Hola! Necesito ayuda con soporte técnico. 
+
+¿Podrían ayudarme con consultas sobre:
+- Productos y servicios
+- Soporte técnico
+- Información general
+
+¡Gracias!`;
+  
+  // Número de WhatsApp
+  const whatsappNumber = '9932911393';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(supportMessage)}`;
+  
+  // Abrir WhatsApp
+  window.open(whatsappUrl, '_blank');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('contactForm');
   
@@ -60,6 +80,32 @@ Mensaje: ${message}`;
       
       // Limpiar formulario
       form.reset();
+    });
+  }
+
+  // Funcionalidad para el botón de soporte
+  const supportBtn = document.querySelector('.support-btn');
+  
+  if (supportBtn) {
+    supportBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Mensaje específico para soporte
+      const supportMessage = `Hola! Necesito ayuda con soporte técnico. 
+
+¿Podrían ayudarme con consultas sobre:
+- Productos y servicios
+- Soporte técnico
+- Información general
+
+¡Gracias!`;
+      
+      // Número de WhatsApp (el mismo que usa el formulario)
+      const whatsappNumber = '9932911393';
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(supportMessage)}`;
+      
+      // Abrir WhatsApp directamente
+      window.open(whatsappUrl, '_blank');
     });
   }
 });

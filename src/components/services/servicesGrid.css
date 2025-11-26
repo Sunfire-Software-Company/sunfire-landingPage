@@ -1,12 +1,28 @@
 .services-section {
-  padding: 5rem 0;
-  background: #2a2a2a;
+  padding: 11rem 0 2rem 0; /* Añadir un poco de padding inferior */
+  background: 
+    radial-gradient(ellipse 150% 180% at bottom left, rgb(255, 111, 0) 0%, rgba(181, 69, 35, 0.08) 25%, transparent 55%),
+    linear-gradient(135deg, #000000 0%, #000000 100%);
+  box-shadow: none;
+  position: relative;
+  overflow: visible;
 }
 
 .services-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+} 
+
+.blog-image {
+  position: absolute;
+  width: 90%;
+  height: 42.3%;
+  object-fit: contain;
+  position: static;    
+  border: none;
+    outline: none;
+    box-shadow: none;
 }
 
 .services-container h2 {
@@ -14,7 +30,16 @@
   font-size: 2.5rem;
   color: #ffffff;
   margin-bottom: 3rem;
-  font-weight: 600;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 20px;
+  padding: 1.5rem 3rem;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgb(255, 255, 255);
 }
 
 .services-grid {
@@ -33,6 +58,7 @@
   border: 1px solid #444444;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .service-card::before {
@@ -68,6 +94,12 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 .service-card:hover .service-icon {
@@ -105,6 +137,302 @@
   }
   
   .services-container h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    padding: 1.2rem 2rem;
+    margin-bottom: 2.5rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
+
+@media (max-width: 480px) {
+  .services-section {
+    padding: 4rem 0 2rem 0; 
+  }
+  
+  .services-container {
+    padding: 0 1rem;
+  }
+  
+  .services-container h2 {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+  }
+  
+  .services-grid {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+/* =======================================
+   SISTEMA DE CARDS DESPLEGABLES
+   ======================================= */
+
+/* Overlay del modal */
+.detail-card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s cubic-bezier(0.4, 0, 1, 1), 
+              visibility 0s linear 0.12s,
+              backdrop-filter 0.12s cubic-bezier(0.4, 0, 1, 1);
+    overflow: hidden;
+}
+
+.detail-card-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+              visibility 0s linear 0s,
+              backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card principal */
+.detail-card {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  transform: scale(0.7) translateY(40px);
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 1, 1),
+              opacity 0.1s cubic-bezier(0.4, 0, 1, 1),
+              box-shadow 0.15s cubic-bezier(0.4, 0, 1, 1);
+  color: white;
+}
+
+.detail-card.active {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Header del card */
+.detail-card-header {
+  position: relative;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-image: var(--header-bg-image, url('/Images/default-card-bg.jpg'));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.detail-card-header.pwa-card {
+  background-size: 110% 150%;
+}
+
+/* Overlay oscuro sobre la imagen */
+.detail-card-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 1;
+}
+
+
+
+/* Forma curvada extendida en la parte inferior del header */
+.detail-card-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background: white;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  z-index: 2;
+}
+
+/* Botón cerrar */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* Contenido del card */
+.detail-card-content {
+  background: white;
+  padding: 0.2rem 1.5rem 1.5rem;
+  color: #333;
+  position: relative;
+  z-index: 2;
+}
+
+/* Título del servicio */
+.detail-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Descripción */
+.detail-card-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Sección de características */
+.detail-card-features h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.features-list li {
+  font-size: 0.85rem;
+  color: #666;
+  padding: 0.3rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.features-list li::before {
+  content: '✓';
+  color: #575757;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Botón de acción */
+.detail-card-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.detail-card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+}
+
+@media (max-width: 768px) {
+  .detail-card {
+    width: 95%;
+    max-width: 350px;
+  }
+  
+  .detail-card-header {
+    height: 140px;
+  }
+  
+  .detail-card-content {
+    padding: 1.5rem 1.2rem 1.2rem;
+  }
+  
+  .detail-card-title {
+    font-size: 1.1rem;
+  }
+  
+  .detail-card-description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-card {
+    width: 95%;
+    max-width: 320px;
+  }
+  
+  .detail-card-header {
+    height: 120px;
+  }
+  
+  .detail-card-content {
+    padding: 1.2rem 1rem 1rem;
+  }
+  
+  .detail-card-title {
+    font-size: 1rem;
+  }
+  
+  .detail-card-description {
+    font-size: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .features-list li {
+    font-size: 0.8rem;
+  }
+  
+  .detail-card-btn {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.8rem;
+  } 
+}
+

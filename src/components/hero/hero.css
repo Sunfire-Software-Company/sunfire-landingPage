@@ -7,31 +7,12 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  background:     radial-gradient(ellipse 180% 220% at top left, rgb(255, 111, 0) 0%, rgba(181, 69, 35, 0.08) 30%, transparent 70%),
+    linear-gradient(135deg, #000000 0%, #000000 100%);
   overflow: hidden;
 }
 
 /* Contenedor de imagen de fondo */
-.image.container {
-  position: absolute;
-  bottom: -47.5%;
-  width: 109%; 
-  height: 117%; 
-  left: 1%;
-  z-index: 1; 
-  opacity: 0.5; 
-  pointer-events: none; 
-  
-  /* Animación de entrada desde abajo */
-  transform: translateY(100px);
-  animation: slideUpImage 1.5s ease-out forwards;
-}
-
-.hero-image {
-  width: 90%;
-  height: auto;
-  object-fit: contain;
-}
 
 .hero-container {
   max-width: 800px;
@@ -50,7 +31,7 @@
   line-height: 1.2;
   margin-bottom: 1rem;
   margin-top: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #e6b223 0%, #b54523 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -70,7 +51,7 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background-color: #667eea;
+  background-color: #de5a22;
   animation: blink-caret 0.9s step-start infinite;
 }
 
@@ -128,7 +109,7 @@
 }
 
 .get-started-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #eda025 0%, #db0000 100%);
   color: white;
   border: none;
   padding: 1rem 2.5rem;
@@ -137,7 +118,7 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: Monaco, Menlo, 'Cascadia Code', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace;
@@ -147,7 +128,7 @@
 .get-started-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: linear-gradient(135deg, #ff8041 0%, #fe1e00 100%);
 }
 
 .get-started-btn:active {
@@ -202,7 +183,7 @@
 
 .hero-submit-btn {
   padding: 0 2.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #f18820 0%, #9602026e 100%);
   color: #fff;
   border: none;
   font-size: 1rem;
@@ -217,7 +198,7 @@
 }
 
 .hero-submit-btn:hover {
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: linear-gradient(135deg, #d41b1bc7 0%, #676767 100%);
   transform: scale(1.02);
 }
 
@@ -234,7 +215,7 @@
 }
 
 .hero-form-disclaimer a {
-  color: #a0a8ff; /* Color más claro para el enlace */
+  color: #d9940a; /* Color más claro para el enlace */
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s ease;
@@ -250,8 +231,8 @@
   display: inline-block;
   padding: 1rem 2.5rem;
   background: transparent;
-  border: 2px solid #667eea;
-  color: #667eea;
+  border: 2px solid #ffffff;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
@@ -262,7 +243,7 @@
 }
 
 .hero-cta:hover {
-  background: #667eea;
+  background: #ffffff;
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
@@ -271,15 +252,14 @@
 /* Responsive Hero para móviles */
 @media (max-width: 768px) {
   .hero-section {
-    background: 
-      linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)),;
-    /* Usar 'contain' para mostrar toda la imagen con los iconos */
+  background:     radial-gradient(ellipse 180% 220% at top left, rgb(255, 111, 0) 0%, rgba(181, 69, 35, 0.08) 30%, transparent 70%),
+    linear-gradient(135deg, #000000 0%, #000000 100%);
     padding: 0 0.8rem;
   }
   
   .hero-container {
     min-height: calc(100vh - 60px); /* Menos altura de header */
-    padding-top: 60px; /* Menos padding top */
+    padding-top: 150px; /* Menos padding top */
   }
   
   .hero-container h1 {
@@ -302,7 +282,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: #667eea;
+    background-color: 135deg, #e6b223 0%, #b54523 100%;
     animation: blink-caret 0.9s step-start infinite;
   }
   
@@ -314,7 +294,7 @@
   
   .hero-contact-form-container {
     max-width: 65%;
-    margin-top: 1.5rem;
+    margin-top: 4rem;
   }
   
   .hero-form-group {
@@ -327,16 +307,18 @@
     font-size: 0.6rem; /* Texto más pequeño */
     min-width: 100px; /* Botón más pequeño */
   }
+
+    .get-started-container {
+    margin-top: 11rem;
+    }
   
-  .get-started-container {
-    margin-top: 2rem;
-  }
 }
 
 @media (max-width: 480px) {
   .hero-section {
   height: 110vh;
-  background: transparent; /* Transparente para que se vea el degradado del body */
+  background:     radial-gradient(ellipse 230% 220% at top left, rgb(255, 111, 0) 0%, rgba(181, 69, 35, 0.08) 30%, transparent 70%),
+    linear-gradient(135deg, #000000 0%, #000000 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -362,7 +344,7 @@
   line-height: 1.2;
   margin-bottom: 1rem;
   margin-top: 5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #e6b223 0%, #b54523 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -380,7 +362,7 @@
   right: 0px;
   top: 0;
   width: 2px;
-  background-color: #667eea;
+  background-color: #e6b223;
   animation: blink-caret 0.9s step-start infinite;
 }
   
@@ -396,29 +378,16 @@
   margin-right: auto;
 }
 
-.image.container {
-  position: absolute;
-  bottom: -45%; /* Posicionar para que solo se vea la mitad superior */
-  width: 160%; /* Ancho de la imagen */
-  height: 122%; /* Alto de la imagen */
-  left: -4%;
-  z-index: 1; /* Detrás del contenido */
-  opacity: 0.5; /* Opacidad muy baja para mejor legibilidad del texto */
-  pointer-events: none; /* No interfiere con la interacción */
-  
-  /* Animación de entrada desde abajo para móvil */
-  transform: translateY(80px);
-  animation: slideUpImage 1.5s ease-out forwards;
-}
+
 
 .hero-image {
-  width: 130%;
+  width: 90%;
   height: auto;
   object-fit: contain;
 }
   
 .get-started-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #e6b223 0%, #b54523 100%);
   color: white;
   border: none;
   padding: 0.5rem 3rem;
@@ -436,7 +405,10 @@
 .get-started-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: linear-gradient(135deg, #b54523 0%, #e6b223 100%);
+}
+.get-started-container {
+  margin-top: -2.5rem;
 }
 
 .get-started-btn:active {
@@ -466,7 +438,7 @@
 .hero-form-group {
   display: flex;
   gap: 2px;
-  margin-bottom: 0;
+  margin-bottom: -5;
   border-radius: 50px;
   overflow: hidden;
   height: 43px;
@@ -494,7 +466,7 @@
 
 .hero-submit-btn {
   padding: 0.5rem 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #e6b223 0%, #b54523 100%);
   color: #fff;
   border: none;
   font-size: 0.5rem;
@@ -509,7 +481,7 @@
 }
 
 .hero-submit-btn:hover {
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: linear-gradient(135deg, #b54523 0%, #e6b223 100%);
   transform: scale(1.02);
 }
 
@@ -526,7 +498,7 @@
 }
 
 .hero-form-disclaimer a {
-  color: #667eea;
+  color: #d9940a;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s ease;
@@ -535,7 +507,7 @@
 }
 
 .hero-form-disclaimer a:hover {
-  border-bottom-color: #667eea;
+  border-bottom-color: #d9940a;
 }
 
 .hero-cta {
@@ -543,8 +515,8 @@
   display: inline-block;
   padding: 1rem 2.5rem;
   background: transparent;
-  border: 2px solid #667eea;
-  color: #667eea;
+  border: 2px solid #e6b223;
+  color: #e6b223;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
@@ -555,7 +527,7 @@
 }
 
 .hero-cta:hover {
-  background: #667eea;
+  background: #ffffff;
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
@@ -565,11 +537,32 @@
 /* Tablet responsive (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .hero-section {
-    background: 
-      linear-gradient(rgba(26, 26, 26, 0.4), rgba(26, 26, 26, 0.4));
+  background:     radial-gradient(ellipse 180% 220% at top left, rgb(255, 111, 0) 0%, rgba(181, 69, 35, 0.08) 30%, transparent 70%),
+    linear-gradient(135deg, #000000 0%, #000000 100%);
     padding: 0 1.5rem;
     height: 90vh;
   }
+
+  .image.container {
+  position: absolute;
+  bottom: -15%; /* Subir imagen para mostrar la mitad */
+  width: 109%; 
+  height: 85%; /* Reducir altura para mostrar solo parte superior */
+  left: 1%;
+  z-index: 1; 
+  opacity: 0.45;
+  pointer-events: none; 
+  
+  /* Animación de entrada desde abajo */
+  transform: translateY(100px);
+  animation: slideUpImage 1.5s ease-out forwards;
+}
+
+.hero-image {
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
   
   .hero-container {
     min-height: calc(90vh - 70px);
@@ -623,21 +616,20 @@
 /* Resolución 2304x1440 (High DPI) */
 @media (min-width: 2304px) and (min-height: 1440px) {
   .hero-section {
-    background: 
-      linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)),
-;
-    padding: 0 3rem;
-    height: 100vh;
+    background: radial-gradient(ellipse 180% 220% at top left, rgb(255, 111, 0) 0%, rgba(181, 69, 35, 0.08) 30%, transparent 70%),
+      linear-gradient(135deg, #000000 0%, #000000 100%);
+    padding: 0 2rem;
+    height: 90vh;
   }
   
   .hero-container {
     min-height: calc(100vh - 100px);
-    padding-top: 100px;
+    padding-top: 220px;
     max-width: 1400px;
   }
   
   .hero-container h1 {
-    font-size: 5.5rem;
+    font-size: 6rem;
     margin-bottom: 2rem;
     line-height: 1.2;
     animation: typing 8s steps(40, end) infinite alternate;
@@ -645,11 +637,11 @@
   
   .hero-container h1::after {
     width: 4px;
-    background-color: #667eea;
+    background-color: #ffffff;
   }
   
   .hero-container p {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin-bottom: 3rem;
     line-height: 1.6;
     max-width: 70%;
@@ -658,7 +650,7 @@
   }
   
   .hero-contact-form-container {
-    max-width: 600px;
+    max-width: 800px;
     margin-top: 4rem;
     margin-bottom: 5rem;
   }
@@ -687,9 +679,22 @@
   }
   
   .hero-form-disclaimer p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 1.5rem 0;
+    font-weight: 500;
   }
+
+  .hero-form-disclaimer a {
+  color: #d9940a; /* Color más claro para el enlace */
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+  font-weight: 400; /* Peso normal para mejor legibilidad */
+}
+
+.hero-form-disclaimer a:hover {
+  border-bottom-color: #667eea;
+}
   
   .get-started-btn {
     padding: 1.2rem 3.5rem;
@@ -704,10 +709,14 @@
     left: -10%;
     opacity: 0.4;
   }
-  
+
   .hero-image {
-    width: 100%;
-  }
+  position: relative;
+  left: 4%;
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
   
   /* Animaciones mejoradas para alta resolución */
   @keyframes typing {

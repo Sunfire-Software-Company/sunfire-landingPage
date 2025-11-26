@@ -36,6 +36,61 @@ body::before {
   z-index: 1; /* Por debajo del header */
 }
 
+.image.container {
+  position: absolute;
+  bottom: -44%;
+  width: 109%; 
+  height: 111%; 
+  left: 6%;
+  z-index: 1; 
+  opacity: 0.5; 
+  pointer-events: none; 
+  
+  /* Animación de entrada desde abajo */
+  transform: translateY(100px);
+  animation: slideUpImage 1.5s ease-out forwards;
+}
+
+.hero-image {
+  width: 80%;
+  object-fit: contain;
+  border-radius: 10%;
+}
+
+@media (max-width: 480px) {
+.image.container {
+  position: absolute;
+  bottom: -63%;
+  width: 300%; 
+  height: 130%; 
+  left: -4%;
+  z-index: 1; 
+  opacity: 0.5; 
+  pointer-events: none; 
+  
+  /* Animación de entrada desde abajo */
+  transform: translateY(100px);
+  animation: slideUpImage 1.5s ease-out forwards;
+}
+}
+
+@media (min-width: 1440px) and (max-width: 1441px) and (min-height: 900px) {
+  .image.container {
+    bottom: -50%;
+    width: 120%; 
+    height: 111%; 
+    left: 1%;
+  }
+}
+
+  @media (min-width: 2304px) and (min-height: 1440px) {
+    .image.container {
+    bottom: -40%;
+    width: 109%; 
+    height: 111%; 
+    left: 1%;
+    }
+  }
 
 
 /* Responsive: En móviles usar proximity para mejor UX */
