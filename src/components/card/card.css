@@ -164,12 +164,13 @@ h2.sofware-precios-title::after,
   padding: 1.2rem 1.5rem;
   border-radius: 15px;
   border: 1px solid rgba(206, 87, 23, 0.2);
-  font-size: 0.7rem;
+  font-size: 1rem;
   color: #f0f0f0;
   line-height: 1.5;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 .sofware-precios-list li::before {
