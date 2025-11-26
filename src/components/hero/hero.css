@@ -546,12 +546,14 @@
   .image.container {
   position: absolute;
   bottom: -15%; /* Subir imagen para mostrar la mitad */
-  width: 109%; 
+  width: 100%;
+  max-width: 100vw;
   height: 85%; /* Reducir altura para mostrar solo parte superior */
-  left: 1%;
+  left: 0;
   z-index: 1; 
   opacity: 0.45;
-  pointer-events: none; 
+  pointer-events: none;
+  overflow: hidden;
   
   /* Animación de entrada desde abajo */
   transform: translateY(100px);
@@ -703,11 +705,13 @@
   }
   
   .image.container {
-    width: 120%;
+    width: 100%;
+    max-width: 100vw;
     height: 100%;
     bottom: -30%;
-    left: -10%;
+    left: 0;
     opacity: 0.4;
+    overflow: hidden;
   }
 
   .hero-image {
