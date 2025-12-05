@@ -117,7 +117,7 @@ const serviceDetails = {
     description: "Aplicaciones web modernas y responsive que funcionan perfectamente en cualquier dispositivo, ofreciendo una experiencia de usuario excepcional.",
     features: [
       "Diseño responsive",
-      "Tecnologías modernas (React, Vue, Angular)",
+      "Tecnologías modernas",
       "Optimización SEO integrada",
       "Carga rápida y eficiente",
       "Compatible con todos los navegadores"
@@ -241,8 +241,8 @@ function closeDetailCard() {
   
   // Iniciar animación de cierre inmediatamente
   card.classList.remove('active');
-  // Restaurar scroll del body
-  document.body.style.overflow = 'auto';
+  // Restaurar scroll del body al valor CSS original
+  document.body.style.overflow = '';
   
   // Usar requestAnimationFrame para sincronizar mejor
   requestAnimationFrame(() => {

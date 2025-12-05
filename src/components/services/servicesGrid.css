@@ -434,5 +434,8 @@
     padding: 0.7rem 0.8rem;
     font-size: 0.8rem;
   } 
-}
 
+  .detail-card-header.pwa-card {
+    background-size: 100% 180%;
+  }
+}
