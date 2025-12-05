@@ -365,14 +365,6 @@
     font-size: 1.2rem;
   }
 }
-
-/* Media query para resolución 2304x1440 (Mac) */
-@media (min-width: 2304px) and (min-height: 1440px) {
-  .contact-section {
-    background: 
-      radial-gradient(ellipse 180% 200% at top right, rgb(255, 111, 0) 0%, rgba(181, 69, 35, 0.12) 30%, transparent 60%),
-      linear-gradient(135deg, #000000 0%, #000000 100%);
-  }
   
   .contact-container {
     max-width: 1400px !important;
@@ -391,4 +383,3 @@
   .contact-item {
     padding: 2.5rem;
   }
-}
